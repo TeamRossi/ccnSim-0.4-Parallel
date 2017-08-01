@@ -1,0 +1,47 @@
+What's new in ccnSim-Parallel
+
+** SUMMARY
+
+ccnSim-Parallel introduces the possibility to parallelize simulations w.r.t. the former ccnSim-v0.4,
+by relying on an innovative approach for the parallelization of general cache network simulations.
+
+In particular, it integrates two different softwares: (i) the open source ccnSim-v0.4 simulator [1], which 
+includes the implementation of the single-threaded ModelGraft technique [2], and (ii) the licensed 
+Akaroa2© software [3, 4], which provides APIs for the design of a master-slave infrastructure. 
+
+Modifications have been made to both, in order to ease their integration and adapt the code of ccnSim 
+to the parallel ModelGraft technique, thus conceiving this unique and dedicated version. 
+Due to the strong integration between the two aforementioned softwares, ccnSim-Parallel requires 
+the modified Akaroa2©. 
+It is important to notice that users should obtain a specific license for the download of the original Akaroa-2.7.13,
+i.e., the initial version used for the deployment of ccnSim-Parallel.
+A dedicated patch needed to integrate the required modifications, instead, is freely distributed at [1].
+
+
+** LIST of MODIFIED FILES with respect to ccnSim-v0.4
+
+- src/statistics/statistics.cc
+- src/content/content_distibution.cc
+- src/content/zipf_sampled.cc
+- src/clients/client_IRM.cc
+- src/node/cache/ttl_cache.cc
+- include/statistics.h
+- include/content_distibution.h
+- include/zipf_sampled.h
+- include/client_IRM.h
+- include/ttl_cache.h
+- modules/content/content.ned
+
+
+
+----- REFERENCES -----
+[1] ccnSim Website, http://perso.telecom-paristech.fr/~drossi/ccnSim.
+
+[2] M. Tortelli, D. Rossi, E. Leonardi, "A Hybrid Methodology for the Performance Evaluation 
+	of Internet-scale Cache Networks", Elsevier Computer Networks, Special Issue on Softwarization 
+	and Caching in NGN, 2017, DOI: 10.1016/j.comnet.2017.04.006.
+
+[3] Akaroa Project Website, https://akaroa.canterbury.ac.nz/akaroa/.    
+
+[4] G. Ewing, K. Pawlikowski, and D. McNickle. Akaroa-2: Exploiting network computing by distributing
+	stochastic simulation. SCSI Press, 1999.
