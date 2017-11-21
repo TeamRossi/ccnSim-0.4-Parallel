@@ -1,3 +1,56 @@
+````
+		  / _____)_	           
+  ____ ____ ____ ( (____ (_)_ __ ___ 
+ / ___) ___)  _ \ \____ \| | '_ ` _ \  
+( (__( (___| | | |_____) | | | | | | | 
+ \____)____)_| |_(______/|_|_| |_| |_|				
+
+````
+
+# Welcome
+
+Thank you for joining the ccnSim community!  
+
+This is ccnSim-0.4-Parallel, the new ccnSim version which implements in addition to:
+* the classical Event Driven (ED) engine [1]
+* the hybrid stochastic/Monte-Carlo simulation engine known as ModelGraft (MG) [2], that allow 100x gains with respect to ED
+* a new parallel engine, known as CS-POST-MT [3] that allows gains of 100x with respect to MG, and thus 10000x with respect to ED!
+
+## Where to start
+
+Note that https://github.com/TeamRossi/ccnSim-0.4-Parallel only specifically deals with the parallel version of ccnSim, and assume users are already familiar with ccnSim (and hopefully with both ED and MG engines). It also assumes users to have at least quickly gone through the technical report describing the new parallel CS-POST-MT engine [3].
+
+Readers interested in the single-threaded stable version of ccnSim-0.4 (ED or MG engines), should instead check https://github.com/TeamRossi/ccnSim-0.4  if need access to the source code, or directly use the docker container version  https://hub.docker.com/r/nonsns/ccnsim-0.4/ 
+
+For information about installation and sample scenarios, please follow the detailed instructions provided in this README.md (as well as in the the ccnSim-Parallel "User Manual", available in the Manual/ folder of this Git https://github.com/TeamRossi/ccnSim-0.4-Parallel/blob/master/Manual/Parallel_ModelGraft_Manual.pdf )  Please also read the documentation inside the provided "runsim_script_Parallel_ModelGraft.sh" script in order to have a clear understanding of the simulation process. 
+
+Finally, please note that simulations with ccnSim-0.4-Parallel require a patched version of the Akaroa2 software [4, 5]. While the patch is freely distributed in this Git, users should obtain a valid license in order to download Akaroa-2.7.13 (i.e., 
+the version used for the development of ccnSim-0.4-Parallel) to which the patch can be applied.  For info related to the various types of license please visit the Akaroa Project Website at [4]. 
+
+
+## References
+
+A few references to the ED [1], ModelGraft [2] and Parallel (CS-POST-MT) [3] engines:
+
+[1] Chiocchetti, Raffaele, Rossi, Dario and Rossini, Giuseppe, 
+"ccnSim: an Highly Scalable CCN Simulator"
+In IEEE International Conference on Communications (ICC), June 2013.
+
+[2] M. Tortelli, D. Rossi, E. Leonardi, 
+"A Hybrid Methodology for the Performance Evaluation of Internet-scale Cache Networks", 
+Elsevier Computer Networks, 2017, DOI: 10.1016/j.comnet.2017.04.006.
+
+[3] Tortelli, Michele, Rossi, Dario and Leonardi, Emilio,
+"Parallel Simulation of Very Large-Scale General Cache Networks"
+http://www.enst.fr/~drossi/paper/rossi17parallel-cache.pdf, November 2017.
+
+	
+[4] Akaroa Project Website, https://akaroa.canterbury.ac.nz/akaroa/.    
+
+[5] G. Ewing, K. Pawlikowski, and D. McNickle. Akaroa-2: Exploiting network computing by distributingstochastic simulation. SCSI Press, 1999.
+
+
+
 # Instruction to install ccnSim-Parallel
 
 In this section we will cover all the steps needed for the installation of ccnSim-Parallel. We suggest the reader to check and execute them by following the presentation order.
@@ -8,7 +61,8 @@ ccnSim-Parallel has been tested on the following platforms, and with the followi
 * Ubuntu Linux 14.04 (64-bit)
 * Ubuntu Linux 16.04 Server (64-bit)
 * Omnetpp-4.6
-* Omnetpp-5.0 • Akaroa-2.7.13
+* Omnetpp-5.0 
+* Akaroa-2.7.13
 
 ## Prerequisites
 * Boost libraries ≥ 1.54
@@ -30,9 +84,9 @@ In order to ease the simulation workflow, a passwordless SSH login needs to be p
 
     sudo apt-get install pssh
 
-## Akaroa2©
+## Akaroa2
 
-As mentioned above, Akaroa2© requires a specific license in order to be used. For instructions about software download and licenses, please visit the website https://akaroa.canterbury. ac.nz/akaroa/. ccnSim-Parallel has been developed starting from Akaroa-2.7.13. The whole set of modifications that have been made in order to implement the parallel ModelGraft strategy are grouped inside the Akaroa_2.7.13_for_PMG.patch.
+As mentioned above, Akaroa2 requires a specific license in order to be used. For instructions about software download and licenses, please visit the website https://akaroa.canterbury. ac.nz/akaroa/. ccnSim-Parallel has been developed starting from Akaroa-2.7.13. The whole set of modifications that have been made in order to implement the parallel ModelGraft strategy are grouped inside the Akaroa_2.7.13_for_PMG.patch.
 Once obtained the original licensed Akaroa-2.7.13, place it in the same directory with the aforementioned patch, and type:
 
     patch -s -p0 < Akaroa_2.7.13_for_PMG.patch
@@ -88,5 +142,10 @@ Installation requires the following commands from the $CCNSIM_DIR:
     ./scripts/makemake.sh
     make
     
-If all the steps described in the previous sections have been successfully executed, simulations of general cache networks using the parallel ModelGraft technique can now be launched. 
-Please refer to the Manual for details about the execution of sample scenarios.
+If all the steps described in the previous sections have been successfully executed, simulations of general cache networks using the parallel ModelGraft technique can now be launched.  
+
+
+
+# Using ccnSim-Parallel
+
+We have provided plenty of scripts and example of usage. Please refer to the Manual for details about the execution of sample scenarios!
