@@ -148,4 +148,6 @@ If all the steps described in the previous sections have been successfully execu
 
 # Using ccnSim-Parallel
 
-We have provided plenty of scripts and example of usage. Please refer to the Manual for details about the execution of sample scenarios!
+We have provided plenty of scripts and example of usage. Please refer to the PDF Manual for details about the execution of sample scenarios! The PDF manual allow you to repeat experiments of the technical report [3] listed above
+
+https://github.com/TeamRossi/ccnSim-0.4-Parallel/blob/master/ccnSim-0.4-Parallel-Manual.pdf
