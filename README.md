@@ -28,23 +28,23 @@ Finally, please note that simulations with ccnSim-0.4-Parallel require a patched
 the version used for the development of ccnSim-0.4-Parallel) to which the patch can be applied.  For info related to the various types of license please visit the Akaroa Project Website at [4]. 
 
 Specifically, the files we had to modify to suit our purpose are the following
-+src/engine/ak_observation.C
-+src/include/observation.H
-+src/engine/observation_handler.H
-+src/engine/observation_analyzer.C
-+src/engine/observation_analyzer.H
-+src/engine/parameter_analyzer.C
-+src/engine/parameter_analyzer.H
-+src/engine/spectral/sa_variance_estimator.C
-+src/engine/spectral/sa_variance_estimator.H
-+src/include/checkpoint.H
-+src/include/checkpoint.C
-+src/ipc/connection.H
-+src/akmaster/engine.H
-+src/akmaster/engine_connection.C
-+src/akmaster/engine.C
-+src/akmaster/simulation.C
-+src/akmaster/simulation.H
+* src/engine/ak_observation.C
+* src/include/observation.H
+* src/engine/observation_handler.H
+* src/engine/observation_analyzer.C
+* src/engine/observation_analyzer.H
+* src/engine/parameter_analyzer.C
+* src/engine/parameter_analyzer.H
+* src/engine/spectral/sa_variance_estimator.C
+* src/engine/spectral/sa_variance_estimator.H
+* src/include/checkpoint.H
+* src/include/checkpoint.C
+* src/ipc/connection.H
+* src/akmaster/engine.H
+* src/akmaster/engine_connection.C
+* src/akmaster/engine.C
+* src/akmaster/simulation.C
+* src/akmaster/simulation.H
 
 
 
